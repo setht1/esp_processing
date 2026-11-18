@@ -1,0 +1,433 @@
+<dataset type="EDDTableFromMultidimNcFiles" datasetID="esp_pnw_toxins" active="true">
+    <reloadEveryNMinutes>10080</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/usr/local/share/data/erddap_data/nemo/esp_pnw_toxins/</fileDir>
+    <fileNameRegex>.*</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <standardizeWhat>0</standardizeWhat>
+    <removeMVRows>true</removeMVRows>
+    <sortFilesBySourceNames></sortFilesBySourceNames>
+    <fileTableInMemory>false</fileTableInMemory><addAttributes>
+        <att name="_NCProperties">null</att>
+        <att name="cdm_data_type">TimeSeries</att>
+        <att name="Conventions">CF-1.10, ACDD-1.3, IOOS-1.2, COARDS</att>
+        <att name="conventions">null</att>
+        <att name="infoUrl">https://coastalscience.noaa.gov/science-areas/habs/toxin-detection-technologies/, https://www.fisheries.noaa.gov/region/west-coast/northwest-science</att>
+        <att name="institution">NOAA-NCCOS-HML, NOAA-NMFS-NWFSC</att>
+        <att name="keywords">acid, actual, actual_volume, algal, association, auto, auto_exposure_duration, auto_exposure_time, auto_image, bloom, center, centers, coastal, concentraiton, data, deployment, deployment_enddate, deployment_name, deployment_startdate, depth, detection, domoic, duration, esp, exposure, first, first_exposure_duration, first_exposure_time, first_image, fisheries, fixed, hab, harmful, hml, identifier, image, latitude, limit, location_id, longitude, lower, lower_limit_of_detection, lower_limit_of_quantification, marine, name, nanoos, national, nccos, near, networked, nmfs, noaa, noaa-nccos-hml, noaa-nmfs-nwfsc, northwest, nrt, nwfsc, observing, ocean, particulate, particulate_domoic_acid_concentraiton, pnw, quantification, real, sample_endtime, sample_starttime, science, second, second_exposure_duration, second_exposure_time, second_image, service, systems, target, target_volume, time, timestamp, toxin, upper, upper_limit_of_quantification, volume</att>
+        <att name="license">[standard]</att>
+        <att name="sourceUrl">(local files)</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v70</att>
+        <att name="summary">The Pacific Northwest Environmental Sample Processor Program (PNW ESP) maintains automated and near real-time collection and analysis of water samples for particulate domoic acid approximately thrice weekly. The ESP data, coupled with other Northwest Association of Networked Ocean Observing Systems (NANOOS) and ORHAB datasets, informs timely updates on harmful algal bloom (HAB) events, and aids in understanding HAB dynamics and their impacts on marine resources and coastal communities.</att>
+    </addAttributes>
+    <dataVariable>
+        <sourceName>time</sourceName>
+        <destinationName>time</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="ancillary_variables">sample_starttime, sample_endtime</att>
+            <att name="calendar">gregorian</att>
+            <att name="description">time of sampling</att>
+            <att name="long_name">time</att>
+            <att name="timezone">UTC</att>
+            <att name="units">seconds since 1970-01-01 00:00:00</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>deployment_name</sourceName>
+        <destinationName>deployment_name</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="cf_role">timeseries_id</att>
+            <att name="description">Deployment designation</att>
+            <att name="long_name">deployment name</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Identifier</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>location_id</sourceName>
+        <destinationName>location_id</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="cf_role">timeseries_id</att>
+            <att name="description">Buoy designation</att>
+            <att name="ioos_category">Identifier</att>
+            <att name="long_name">location_id</att>
+            <att name="units">1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="long_name">Location Id</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>latitude</sourceName>
+        <destinationName>latitude</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="description">Latitude position in degrees North</att>
+            <att name="long_name">latitude</att>
+            <att name="units">degrees_north</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">47</att>
+            <att name="colorBarMinimum" type="double">49</att>
+            <att name="ioos_category">Location</att>
+            <att name="long_name">Latitude</att>
+            <att name="standard_name">latitude</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>longitude</sourceName>
+        <destinationName>longitude</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="description">Longitude position in degrees East</att>
+            <att name="long_name">longitude</att>
+            <att name="units">degrees_east</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">-126</att>
+            <att name="colorBarMinimum" type="double">-124</att>
+            <att name="ioos_category">Location</att>
+            <att name="long_name">Longitude</att>
+            <att name="standard_name">longitude</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>deployment_startdate</sourceName>
+        <destinationName>deployment_startdate</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="ancillary_variables">time, deployment_enddate</att>
+            <att name="calendar">gregorian</att>
+            <att name="description">start date of the deployment</att>
+            <att name="long_name">time</att>
+            <att name="timezone">UTC</att>
+            <att name="units">seconds since 1970-01-01 00:00:00</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>deployment_enddate</sourceName>
+        <destinationName>deployment_enddate</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="ancillary_variables">time, deployment_startdate</att>
+            <att name="calendar">gregorian</att>
+            <att name="description">end date of the deployment</att>
+            <att name="long_name">time</att>
+            <att name="timezone">UTC</att>
+            <att name="units">seconds since 1970-01-01 00:00:00</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sample_starttime</sourceName>
+        <destinationName>sample_starttime</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillVal" type="long">-555</att>
+            <att name="ancillary_variables">time, sample_endtime</att>
+            <att name="calendar">gregorian</att>
+            <att name="description">start time of sampling</att>
+            <att name="long_name">time</att>
+            <att name="missing_value" type="double">-555.0</att>
+            <att name="timezone">UTC</att>
+            <att name="units">seconds since 1970-01-01 00:00:00</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>sample_endtime</sourceName>
+        <destinationName>sample_endtime</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillVal" type="long">-555</att>
+            <att name="ancillary_variables">time, sample_starttime</att>
+            <att name="calendar">gregorian</att>
+            <att name="description">end time of sampling</att>
+            <att name="long_name">time</att>
+            <att name="missing_value" type="double">-555.0</att>
+            <att name="timezone">UTC</att>
+            <att name="units">seconds since 1970-01-01 00:00:00</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>depth</sourceName>
+        <destinationName>depth</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="description">target depth at which the sample was taken</att>
+            <att name="long_name">depth</att>
+            <att name="units">m</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">10</att>
+            <att name="colorBarMinimum" type="double">0</att>
+            <att name="colorBarPalette">TopographyDepth</att>
+            <att name="ioos_category">Location</att>
+            <att name="standard_name">depth</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>target_volume</sourceName>
+        <destinationName>target_volume</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillVal" type="long">-555</att>
+            <att name="description">target sample volume</att>
+            <att name="long_name">target volume</att>
+            <att name="missing_value" type="double">-555.0</att>
+            <att name="units">mL</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Unknown</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>actual_volume</sourceName>
+        <destinationName>actual_volume</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillVal" type="long">-555</att>
+            <att name="description">actual sample volume</att>
+            <att name="long_name">actual volume</att>
+            <att name="missing_value" type="double">-555.0</att>
+            <att name="units">mL</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Unknown</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>auto_exposure_time</sourceName>
+        <destinationName>auto_exposure_time</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="ancillary_variables">auto_image, auto_exposure_duration</att>
+            <att name="calendar">gregorian</att>
+            <att name="description">Automatic Sampling Exposure Timestamp</att>
+            <att name="long_name">Auto Exposure Timestamp</att>
+            <att name="timezone">UTC</att>
+            <att name="units">seconds since 1970-01-01 00:00:00</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>auto_image</sourceName>
+        <destinationName>auto_image</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="ancillary_variables">auto_exposure_time, auto_exposure_duration</att>
+            <att name="description">Automatic Sampling Exposure Image Filename</att>
+            <att name="long_name">Auto Exposure Image</att>
+            <att name="units">1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Unknown</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>auto_exposure_duration</sourceName>
+        <destinationName>auto_exposure_duration</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="ancillary_variables">auto_exposure_time, auto_image</att>
+            <att name="description">Automatic Sampling Exposure Time Duration</att>
+            <att name="long_name">Auto Exposure Duration</att>
+            <att name="units">seconds</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Time</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>first_exposure_time</sourceName>
+        <destinationName>first_exposure_time</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="ancillary_variables">first_image, first_exposure_duration</att>
+            <att name="calendar">gregorian</att>
+            <att name="description">First Fixed Sampling Exposure Timestamp</att>
+            <att name="long_name">First Fixed Exposure Timestamp</att>
+            <att name="timezone">UTC</att>
+            <att name="units">seconds since 1970-01-01 00:00:00</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>first_image</sourceName>
+        <destinationName>first_image</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="ancillary_variables">first_exposure_time, first_exposure_duration</att>
+            <att name="description">First Fixed Sampling Exposure Image Filename</att>
+            <att name="long_name">First Fixed Exposure Image</att>
+            <att name="units">1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Unknown</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>first_exposure_duration</sourceName>
+        <destinationName>first_exposure_duration</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="ancillary_variables">first_exposure_time, first_image</att>
+            <att name="description">First Fixed Sampling Exposure Time Duration</att>
+            <att name="long_name">First Fixed Exposure Duration</att>
+            <att name="units">seconds</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Time</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>second_exposure_time</sourceName>
+        <destinationName>second_exposure_time</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="ancillary_variables">second_image, second_exposure_duration</att>
+            <att name="calendar">gregorian</att>
+            <att name="description">Second Fixed Sampling Exposure Timestamp</att>
+            <att name="long_name">Second Fixed Exposure Timestamp</att>
+            <att name="timezone">UTC</att>
+            <att name="units">seconds since 1970-01-01 00:00:00</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Time</att>
+            <att name="standard_name">time</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>second_image</sourceName>
+        <destinationName>second_image</destinationName>
+        <dataType>String</dataType>
+        <!-- sourceAttributes>
+            <att name="ancillary_variables">second_exposure_time, second_exposure_duration</att>
+            <att name="description">Second Fixed Sampling Exposure Image Filename</att>
+            <att name="long_name">Second Fixed Exposure Image</att>
+            <att name="units">1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Time</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>second_exposure_duration</sourceName>
+        <destinationName>second_exposure_duration</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="ancillary_variables">second_exposure_time, second_image</att>
+            <att name="description">Second Fixed Sampling Exposure Time Duration</att>
+            <att name="long_name">Second Fixed Exposure Duration</att>
+            <att name="units">seconds</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Time</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>particulate_domoic_acid_concentraiton</sourceName>
+        <destinationName>particulate_domoic_acid_concentraiton</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillVal" type="long">-555</att>
+            <att name="description">concentration of particular domoic acid</att>
+            <att name="long_name">particulate_domoic_acid_concentraiton</att>
+            <att name="missing_value" type="double">-555.0</att>
+            <att name="units">ng/L</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="_FillValue" type="double">NaN</att>
+            <att name="ioos_category">Unknown</att>
+            <att name="long_name">Particulate Domoic Acid Concentraiton</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lower_limit_of_detection</sourceName>
+        <destinationName>lower_limit_of_detection</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillVal" type="long">-555</att>
+            <att name="description">Lowest value of domoic acid that can be detected</att>
+            <att name="long_name">lower_limit_of_detection</att>
+            <att name="missing_value" type="double">-555.0</att>
+            <att name="units">ng/L</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Unknown</att>
+            <att name="long_name">Lower Limit Of Detection</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>lower_limit_of_quantification</sourceName>
+        <destinationName>lower_limit_of_quantification</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillVal" type="long">-555</att>
+            <att name="description">Lowest value of domoic acid that can be quanitfied</att>
+            <att name="long_name">lower_limit_of_quantification</att>
+            <att name="missing_value" type="double">-555.0</att>
+            <att name="units">ng/L</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Unknown</att>
+            <att name="long_name">Lower Limit Of Quantification</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>upper_limit_of_quantification</sourceName>
+        <destinationName>upper_limit_of_quantification</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="_FillVal" type="long">-555</att>
+            <att name="description">Highest value of domoic acid that can be quanitfied</att>
+            <att name="long_name">upper_limit_of_quantification</att>
+            <att name="missing_value" type="double">-555.0</att>
+            <att name="units">ng/L</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Unknown</att>
+            <att name="long_name">Upper Limit Of Quantification</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+
