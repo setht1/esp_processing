@@ -2,7 +2,15 @@ import os
 import sys
 import shutil
 import argparse
-from importlib import reload
+import json
+
+def load_global_metadata():
+
+    metadir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "metadata", "global_metadata.json")
+    metadict = {}
+    with open(metadir, 'r') as f:
+        metadict = json.load(f)
+    return metadict
 
 def populate_metadata(dataset, esp_metadict):
 
