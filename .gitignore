@@ -1,2 +1,4 @@
 *.nc
 *.json
+/__pycache__
+/deployment_data
